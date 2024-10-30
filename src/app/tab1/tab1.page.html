@@ -1,0 +1,89 @@
+
+<app-header [pageTitle]="'Productos'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Segmento para tabs -->
+  <ion-segment [(ngModel)]="selectedTab" color="primary">
+    <ion-segment-button value="videojuegos">
+      <ion-label>Videojuegos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="consolas">
+      <ion-label>Consolas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="smartphones">
+      <ion-label>Smartphones</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Contenido de Videojuegos -->
+  <div *ngIf="selectedTab === 'videojuegos'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Videojuegos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" size-md="3" size-lg="2" *ngFor="let juego of videojuegos">
+              <ion-card (click)="irADetalles(juego)">
+                <img [src]="juego.imagen" alt="{{ juego.nombre }}">
+                <ion-card-content>
+                  <h2>{{ juego.nombre }}</h2>
+                  <p>{{ juego.precio | currency }}</p>
+                </ion-card-content>
+              </ion-card> 
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Contenido de Consolas -->
+  <div *ngIf="selectedTab === 'consolas'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Consolas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" size-md="3" size-lg="2" *ngFor="let consola of consolas">
+              <ion-card (click)="irADetalles(consola)">
+                <img [src]="consola.imagen" alt="{{ consola.nombre }}">
+                <ion-card-content>
+                  <h2>{{ consola.nombre }}</h2>
+                  <p>{{ consola.precio | currency }}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Contenido de Smartphones -->
+  <div *ngIf="selectedTab === 'smartphones'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Smartphones</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" size-md="3" size-lg="2" *ngFor="let smartphone of smartphones">
+              <ion-card (click)="irADetalles(smartphone)">
+                <img [src]="smartphone.imagen" alt="{{ smartphone.nombre }}">
+                <ion-card-content>
+                  <h2>{{ smartphone.nombre }}</h2>
+                  <p>{{ smartphone.precio | currency }}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

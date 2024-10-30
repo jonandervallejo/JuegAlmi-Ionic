@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title" [ngStyle]="{ 'text-align': 'center' }">
+      {{ pageTitle }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToCart()">
+        <img src="assets/img/cart.png" alt="Carrito" style="width: 24px; height: 24px;">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,10 @@
+ion-card img {
+    width: 100%;
+    height: 280px; /* Define una altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta y ajusta la imagen para llenar el contenedor sin deformarla */
+    border-radius: 8px; /* Opcional: añade bordes redondeados */
+  }
+
+  ion-card {
+    width: 90%;
+  }

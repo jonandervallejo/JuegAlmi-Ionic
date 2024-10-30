@@ -1,0 +1,25 @@
+
+<app-header [pageTitle]="'Galería'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="4" *ngFor="let imagen of imagenes">
+        <ion-card (click)="abrirImagen(imagen)">
+          <img [src]="imagen.url" alt="{{ imagen.descripcion }}">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Modal para mostrar imagen en grande -->
+  <ion-modal [isOpen]="modalAbierto" (ionModalDidDismiss)="cerrarModal()">
+    <ng-template>
+      <ion-content>
+        <img [src]="imagenSeleccionada?.url" style="width: 100%">
+        <p style="text-align: center">{{ imagenSeleccionada?.descripcion }}</p>
+        <ion-button expand="full" (click)="cerrarModal()">Cerrar</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

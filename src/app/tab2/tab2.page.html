@@ -1,0 +1,15 @@
+
+
+<app-header [pageTitle]="'Ubicación'"></app-header>
+
+<ion-content [fullscreen]="true">
+    <google-map class="map-container"
+      [height]="'400px'" 
+      [width]="'30%'" 
+      [center]="{ lat: latitude, lng: longitude }" 
+      [zoom]="zoom">
+      <map-marker 
+        [position]="{ lat: latitude, lng: longitude }">
+      </map-marker>
+    </google-map>
+</ion-content>

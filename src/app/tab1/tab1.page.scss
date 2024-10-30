@@ -1,0 +1,20 @@
+ion-card {
+    min-height: 250px; /* Ajusta esta altura según tus necesidades */
+
+  }
+
+ion-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  ion-card-content h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  ion-card-content p {
+    font-size: 1em;
+    color: #3dc2ff;
+  }

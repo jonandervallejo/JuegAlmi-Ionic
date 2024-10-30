@@ -1,0 +1,7 @@
+{
+  "name": "retoJuegosAlmi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

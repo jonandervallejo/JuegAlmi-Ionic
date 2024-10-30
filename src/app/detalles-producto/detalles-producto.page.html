@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ producto?.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img [src]="producto?.imagen" alt="{{ producto?.nombre }}">
+    <ion-card-header>
+      <ion-card-title>{{ producto?.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ producto?.precio | currency }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Descripción: Aquí puedes añadir una descripción detallada del producto.</p>
+      <ion-button expand="full" (click)="agregarAlCarrito()">Añadir al Carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
